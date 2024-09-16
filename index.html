@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css" integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <!-- Templet -->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.min.css" rel="stylesheet"> -->
+    <style>
+        .swal2-popup { 
+            font-size: 1.6rem !important; 
+        }
+        @media only screen and (max-width: 768px) {
+            .swal2-popup { 
+                font-size: 1.1rem !important; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <main id="main" class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-offset-3 col-lg-6">
+                <div class="m-b-md text-center">
+                    <h1 id="title">Fibonacci</h1>
+                    <p id="description" class="description" class="text-center">Piramid fibonacci
+                    </p>
+                </div>
+                <form method="GET" action="" id="survey-form" name="survey-form">
+                    <fieldset>
+                        <label for="jml_tangga" id="jml_tangga-label">
+                            Jumlah Tangga * <span class="text-sm fs-5">(semakin banyak semakin lag)</span>
+                            <input class="" type="text" id="jml_tangga" name="jml_tangga" maxlength="3" placeholder="" autocomplete="off" required />
+                        </label>
+                    </fieldset>
+                    <!-- <fieldset>
+                        <label for="dropdown">
+                            Which option best describes your current role? *
+                            <select id="dropdown" name="dropdown" class="m-t-xs">
+                                <option value="other">Other</option>
+                            </select>
+                        </label>
+                    </fieldset> -->
+                    <!-- <fieldset>
+                        <div class="labels">
+                            How likely is that you would recommend freeCodeCamp to a friend? *
+                        </div>
+                        <label class="m-b-xs">
+                            <input type="radio" name="survey-form-gender" value="definitely" checked /> Definitely
+                        </label>
+                    </fieldset> -->
+                    <!-- <fieldset>
+                        <label for="survey-form-like">
+                            What do you like most in FCC:
+                            <select id="survey-form-like" name="survey-form-like" class="m-t-xs">
+                                <option value="challenges" selected>Challenges</option>
+                            </select>
+                        </label>
+                    </fieldset> -->
+                    <fieldset>
+                        <!-- <div class="labels">
+                            Things that should be improved in the future (Check all that apply):
+                        </div> -->
+                        <label for="auto_submit" class="m-b-xs user-select-none">
+                            <input type="checkbox" id="auto_submit" name="auto_submit">
+                            Auto submit
+                        </label>
+                        <label for="force_space" class="m-b-xs user-select-none">
+                            <input type="checkbox" id="force_space" name="force_space">
+                            Force space
+                        </label>
+                        <div class="input_space d-none">
+                            <input class="m-0" type="number" id="input_space" name="input_space" max="99" placeholder="" required/>
+                        </div>
+                    </fieldset>
+                    <fieldset class="mb-md-4">
+                        <div class="labels">
+                            Font Size
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <input class="my-auto text-decoration-line-through" type="number" id="input_fs" name="input_fs" max="99" placeholder="" readonly/>
+                            <label for="input_fs" class="ms-2 me-5 user-select-none">px</label>
+                            <label for="default_fs" class="m-b-xs user-select-none">
+                                <input type="checkbox" id="default_fs" name="default_fs" checked>
+                                Default
+                            </label>
+                        </div>
+                    </fieldset>
+                    <button type="button" class="mt-sm-5 btn btn-custom" id="submit" name="submit">Submit</button>
+                    <!-- <fieldset>
+                        <label for="survey-form-suggestions">
+                            Any Comments or Suggestions?
+                            <textarea id="survey-form-suggestions" maxlength="194"></textarea>
+                        </label>
+                    </fieldset> -->
+                </form>
+                <!-- <div class="copyright m-t-sm">
+                    <div>By Adèle Royer with <i class="glyphicon glyphicon-heart"></i></div>
+                </div> -->
+            </div>
+        </div>
+    </main>
+    <section class="container-fluid mt-5 pt-5 text-center">
+        <fieldset id="survey-form" >
+            <div class="d-flex align-items-stretch mb-3">
+                <label for="hasil" class="user-select-none my-auto ms-auto">
+                    Hasil : 
+                </label>
+                <div class="d-grid gap-2 d-md-block me-auto my-auto ms-2">
+                    <button type="button" class="btn btn-outline-light btn-sm border border-2 py-1" id="copy_hasil" name="copy_hasil">Copy <i class="fa-solid fa-copy"></i></button>
+                </div>
+            </div>
+            <div id="outer_hasil" style="transition: all .5s ease-in-out;">
+                <textarea class="readonly mt-1 text-center fs-4" id="hasil" readonly></textarea>
+            </div>
+        </fieldset>
+    </section>
+</body>
+    <!-- Templet -->
+    <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js" integrity="sha512-xq+0+dRhI6SZOh+lDnMJEju2p2YPINflJLcYrRAsIMaXnJi6/V3lppCMCYsB2MLeF2E93r+fVo0MioY90pNzpw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"
+        integrity="sha512-+ol0Tck+iZU3Wj7lJSB9/7iVlEwvVbURRJTUQ9QmjVFF8tnrltnwuafT/eu1e4GTOgbCri6YLJkvUS8YIr4U2w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <script src='jquery.autogrow-textarea.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
+<script>
+    // var jml_tangga = 4;
+    
+    var force_space = false;
+    var default_space = 1;
+    // if (force_space > 1) default_space = force_space;
+    // Fungsi cari bil. Pascal
+    function func_pascal(jml_tangga) {
+        var arr_pascal = [[0, 1, 0]];
+        var temp_arr_pascal;
+        var bil_pascal;
+
+        for (i = 0; i < jml_tangga - 1; i++) {
+            temp_arr_pascal = [];
+            temp_arr_pascal.push(0);
+            for (j = 0; j < arr_pascal[i].length - 1; j++) {
+                bil_pascal = arr_pascal[i][j] + arr_pascal[i][j + 1];
+                temp_arr_pascal.push(bil_pascal);
+                // Mencari spasi yang pas
+                if (default_space < (bil_pascal.toString()).length && force_space == false)
+                    default_space = parseInt((bil_pascal.toString()).length);
+            }
+            temp_arr_pascal.push(0);
+            arr_pascal.push(temp_arr_pascal);
+        }
+
+        return arr_pascal;
+    }
+
+    // Fungsi pascal to Piramid
+    function func_piramid(arr_pascal, jml_tangga) {
+        var piramid_pascal = [];
+        var curr_row = '';
+        let space = '\xa0';
+        var first_space = (jml_tangga) * default_space;
+
+        for (i = 0; i < jml_tangga; i++) {
+            curr_row = '' + space.repeat(first_space);
+            for (j = 1; j < arr_pascal[i].length - 2; j++) {
+                var extra_space = 1;
+                var curr_bil = parseInt((arr_pascal[i][j].toString()).length);
+                if (curr_bil > default_space) curr_bil = 0;
+                curr_row += '' + arr_pascal[i][j] + space.repeat(default_space + ((default_space) - curr_bil));
+            }
+
+            curr_row += '' + arr_pascal[i].slice(-2)[0] + space.repeat(first_space + 2);
+            first_space -= default_space;
+            piramid_pascal.push(curr_row);
+            // console.log(curr_row);
+        }
+
+        return piramid_pascal;
+    }
+
+    // Print
+    function func_printPascal(jml_tangga) {
+        var arr_pascal = func_pascal(jml_tangga);
+        var piramid_pascal = func_piramid(arr_pascal, jml_tangga);
+        var print_piramid = '';
+        print_piramid += piramid_pascal[0];
+        for (i = 1; i < piramid_pascal.length; i++) {
+                print_piramid += '\n'+ piramid_pascal[i];
+        }
+        // for (i = 0; i < piramid_pascal.length; i++) {
+        //     print_piramid += '\n' + piramid_pascal[i] + piramid_pascal[(piramid_pascal.length - 1) - i];
+        // }
+        // for (i = piramid_pascal.length - 2; i >= 0; i--) {
+        //     print_piramid += '\n' + piramid_pascal[i] + piramid_pascal[(piramid_pascal.length - 1) - i];
+        // } 
+        return print_piramid;
+    }
+</script>
+<script>
+    // var animate_status = true;
+    function func_animate() {
+        $('#force_space').change(function() {
+            if ($(this).is(':checked')) {
+                $('.input_space').toggleClass('d-none').slideUp(0, function () {
+                    $(this).slideDown(500, 'easeOutQuart');
+                });
+            } else {
+                $('.input_space').slideUp(500, 'easeInBack', function() {
+                    $(this).toggleClass('d-none');
+                });
+            }
+        });
+    }
+    
+    function func_confForm() {
+        function func_onlyInputNumber(id) {
+            $(id).on("keypress keyup blur", function (e) {
+                $(this).val($(this).val().replace(/[^0-9\.]/g, ''));
+                if ((e.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                    event.preventDefault();
+                }
+            });
+        }
+        function func_onlyInputNumberFloat(id) {
+            $(id).on("keypress keyup blur", function (e) {
+                if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                    event.preventDefault();
+                }
+            });
+        }
+        function func_maxLengthNumber(id) {
+            // input[type = number]
+              $(id + '[max]:not([max=""])').on('input', function (ev) {
+                var $this = $(this);
+                var maxlength = $this.attr('max').length;
+                var value = $this.val();
+                if (value && value.length >= maxlength) {
+                    $this.val(value.substr(0, maxlength));
+                }
+            });
+        }
+        function func_fs_resize(id_target, id_trigger) {
+            $(id_trigger).on('click', function () {
+                if ($(this).is(':checked')) {
+                    $(id_target).addClass('text-decoration-line-through').attr('readonly', true);
+                } else {
+                    $(id_target).removeClass('text-decoration-line-through').attr('readonly', false);
+                }
+            });
+        }
+
+        func_onlyInputNumber('#jml_tangga');
+        func_onlyInputNumber('#input_space');
+        func_maxLengthNumber('#input_space');
+        func_onlyInputNumberFloat('#input_fs');
+        func_maxLengthNumber('#input_fs');
+        func_fs_resize('#input_fs', '#default_fs');
+    }
+
+    function updateHeight(id) {
+        // var scroll = (id.prop('scrollHeight'));
+        // // scroll += scroll * (3/100);
+        // id.css('height', scroll +  'px');
+
+        id.autogrow( { vertical : true, horizontal : true } );
+    }
+
+    function func_submit() {
+        var jml_tangga = parseInt($('#jml_tangga').val());
+        if ($('#force_space').is(':checked')) {
+            default_space = parseInt($('#input_space').val());
+            if ($('#input_space').val() == '') default_space = 0;
+            force_space = true;
+        }
+
+        // Font Size
+        if (!$('#default_fs').is(':checked')) {
+            var new_fs = $('#input_fs').val();
+            if (!new_fs == '') {
+                $('#hasil').removeClass('fs-4').css({ "font-size": new_fs + "px" });
+            }
+        } else {
+            $('#hasil').css({ "font-size": "" }).addClass('fs-4');
+        }
+
+        $('#hasil').val(func_printPascal(jml_tangga));
+        updateHeight($("#hasil"));
+        force_space = false;
+        default_space = 0;
+    }
+
+    function func_confSubmit() {
+        function func_controlSubmit(id) {
+            $(id).on("change keypress keyup blur", function (e){
+                if (auto_submit == true) {
+                    func_submit();
+                    setTimeout(() => {
+                        updateHeight($("#hasil"));
+                    }, 500);
+                }
+            })
+        }
+
+        func_controlSubmit('#jml_tangga');
+        func_controlSubmit('#auto_submit');
+        func_controlSubmit('#force_space');
+        func_controlSubmit('#input_space');
+        func_controlSubmit('#input_fs');
+        func_controlSubmit('#default_fs');
+    }
+
+    function func_copyHasil() {
+        $("#copy_hasil").click(function () {
+            $("#hasil").select();
+            document.execCommand('copy');
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                showCloseButton: true,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                html: "Copied"
+            });
+        });
+    }
+
+    var auto_submit = false;
+    function func_autoSubmit () {
+        $("#auto_submit").click(function() {
+            auto_submit = false;
+            if($(this).is(':checked')) {
+                auto_submit = true;
+                func_submit();
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        func_animate();
+        func_confForm();
+        func_copyHasil();
+        func_autoSubmit();
+        func_confSubmit();
+        $('#submit').on('click', function () {
+            func_submit();
+            setTimeout(() => {
+                updateHeight($("#hasil"));
+            }, 500);
+        });
+    });
+</script>
